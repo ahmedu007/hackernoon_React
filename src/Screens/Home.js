@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
+import BASE_URL from "../API_URL";
 import StoryBox from "./Components/StoryBox";
-
-const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
 export default class Home extends Component {
   state = {
@@ -37,6 +36,7 @@ export default class Home extends Component {
         {this.state.stories.map((story, index) => (
           <StoryBox
             key={story.id}
+            id={story.id}
             title={story.title}
             url={story.url}
             comments={story.descendants}
