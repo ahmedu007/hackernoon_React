@@ -1,19 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Router from "react-router-dom/BrowserRouter";
+import { AnimatedSwitch } from "react-router-transition";
+import Route from "react-router-dom/Route";
+
+import Home from "./Components/Home";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 0 }}
+          atActive={{ opacity: 1 }}
+          className="switch-wrapper"
+        >
+          <Route exact path="/" component={Home} />
+          {/* <Route path="/about/" component={About} />
+          <Route path="/etc/" component={Etc} /> */}
+        </AnimatedSwitch>
+      </Router>
     );
   }
 }
