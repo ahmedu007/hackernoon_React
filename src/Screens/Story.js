@@ -35,12 +35,19 @@ export default class Story extends Component {
     return (
       <div>
         {this.state.loading ? (
-          <BounceLoader
-            sizeUnit={"px"}
-            size={150}
-            color={"#123abc"}
-            loading={this.state.loading}
-          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <BounceLoader
+              sizeUnit={"px"}
+              size={150}
+              color={"#123abc"}
+              loading={this.state.loading}
+            />
+          </div>
         ) : (
           <div>
             {this.state.comments.map(comment => (
