@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 import StoryBox from "./Components/StoryBox";
 
@@ -22,7 +22,6 @@ export default class Home extends Component {
           fetch(`${BASE_URL}/item/${eachID}.json`)
             .then(res => res.json())
             .then(story => {
-              console.log(story);
               let topStories = this.state.stories.concat(story);
               this.setState({ stories: topStories });
             })
@@ -43,6 +42,8 @@ export default class Home extends Component {
             comments={story.descendants}
             score={story.score}
             index={index}
+            time={story.time}
+            author={story.by}
           />
         ))}
       </div>
