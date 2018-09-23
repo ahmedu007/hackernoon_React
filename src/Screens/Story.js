@@ -13,7 +13,7 @@ export default class Story extends Component {
       .then(res => res.json())
       .then(article =>
         article.kids.map(commentID => {
-          fetch(`${BASE_URL}/item/${commentID}.json`)
+          return fetch(`${BASE_URL}/item/${commentID}.json`)
             .then(res => res.json())
             .then(comment => {
               let comments = this.state.comments.concat(comment);
@@ -34,6 +34,7 @@ export default class Story extends Component {
             comment={comment.text}
             time={comment.time}
             author={comment.by}
+            deleted={comment.deleted}
           />
         ))}
       </div>
