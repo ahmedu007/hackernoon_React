@@ -3,7 +3,7 @@ import Router from "react-router-dom/BrowserRouter";
 import { AnimatedSwitch } from "react-router-transition";
 import Route from "react-router-dom/Route";
 
-import Home from "./Components/Home";
+import Home from "./Screens/Home";
 
 class App extends Component {
   render() {

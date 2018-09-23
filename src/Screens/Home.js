@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 
+import StoryBox from "./Components/StoryBox";
+
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
 export default class Home extends Component {
@@ -33,14 +35,15 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        {this.state.stories.map(story => (
-          <Fragment key={story.id}>
-            <h2>{story.title}</h2>
-            <p>{story.url}</p>
-            <p>Comments: {story.descendants}</p>
-            <p>Score: {story.score}</p>
-            {/* <p>{}</p> */}
-          </Fragment>
+        {this.state.stories.map((story, index) => (
+          <StoryBox
+            key={story.id}
+            title={story.title}
+            url={story.url}
+            comments={story.descendants}
+            score={story.score}
+            index={index}
+          />
         ))}
       </div>
     );
