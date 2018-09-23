@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BounceLoader from "react-spinners/BounceLoader";
 
 import BASE_URL from "../API_URL";
 import Comments from "./Components/Comments";
@@ -6,9 +7,14 @@ import Comments from "./Components/Comments";
 export default class Story extends Component {
   state = {
     comments: [],
+    loading: true,
   };
 
   componentDidMount = () => {
+    this.fetchComments();
+  };
+
+  fetchComments = () => {
     fetch(`${BASE_URL}/item/${this.props.match.params.articleId}.json`)
       .then(res => res.json())
       .then(article =>
@@ -17,7 +23,7 @@ export default class Story extends Component {
             .then(res => res.json())
             .then(comment => {
               let comments = this.state.comments.concat(comment);
-              this.setState({ comments });
+              this.setState({ comments, loading: false });
             })
             .catch(err => console.warn(err));
         })
@@ -28,15 +34,26 @@ export default class Story extends Component {
   render() {
     return (
       <div>
-        {this.state.comments.map(comment => (
-          <Comments
-            key={comment.id}
-            comment={comment.text}
-            time={comment.time}
-            author={comment.by}
-            deleted={comment.deleted}
+        {this.state.loading ? (
+          <BounceLoader
+            sizeUnit={"px"}
+            size={150}
+            color={"#123abc"}
+            loading={this.state.loading}
           />
-        ))}
+        ) : (
+          <div>
+            {this.state.comments.map(comment => (
+              <Comments
+                key={comment.id}
+                comment={comment.text}
+                time={comment.time}
+                author={comment.by}
+                deleted={comment.deleted}
+              />
+            ))}
+          </div>
+        )}
       </div>
     );
   }

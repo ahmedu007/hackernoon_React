@@ -65,6 +65,7 @@ export default class Home extends Component {
                 author={story.by}
               />
             ))}
+            <p>More Stories ...</p>
           </div>
         )}
       </div>
