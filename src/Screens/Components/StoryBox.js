@@ -1,22 +1,29 @@
 import React, { Fragment } from "react";
-
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import ListSubheader from "@material-ui/core/ListSubheader";
 
-const StoryBox = ({ title, url, comments, score, classes, author, time }) => {
+const StoryBox = ({
+  title,
+  url,
+  comments,
+  score,
+  classes,
+  author,
+  time,
+  id,
+}) => {
   const date = new Date(time * 1000);
   return (
     <Fragment>
       <List>
         <ListItem>
           <ListItemText
-            // style={{ textAlign: "left", marginLeft: "10%" }}
-            primary={title}
+            primary={<NavLink to={`${id}/comments`}>{title}</NavLink>}
             secondary={url}
           />
         </ListItem>

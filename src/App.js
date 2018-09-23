@@ -4,6 +4,7 @@ import { AnimatedSwitch } from "react-router-transition";
 import Route from "react-router-dom/Route";
 
 import Home from "./Screens/Home";
+import Story from "./Screens/Story";
 
 class App extends Component {
   render() {
@@ -16,8 +17,7 @@ class App extends Component {
           className="switch-wrapper"
         >
           <Route exact path="/" component={Home} />
-          {/* <Route path="/about/" component={About} />
-          <Route path="/etc/" component={Etc} /> */}
+          <Route path="/:articleId/comments/" component={Story} />
         </AnimatedSwitch>
       </Router>
     );
