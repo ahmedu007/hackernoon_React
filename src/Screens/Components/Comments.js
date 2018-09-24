@@ -46,27 +46,6 @@ const Comments = props => {
           </CardContent>
         )}
       </Card>
-      {/* <List>
-        <ListItem>
-          {props.deleted ? (
-            <ListItemText primary="This comment was deleted" />
-          ) : (
-            <ListItemText
-              primary={
-                <div dangerouslySetInnerHTML={{ __html: props.comment }} />
-              }
-              secondary={
-                <span>
-                  <span>{`Comment by: ${props.author.charAt(0).toUpperCase() +
-                    props.author.slice(1)} `}</span>
-                  <br />
-                  <span>{date.toDateString()}</span>
-                </span>
-              }
-            />
-          )}
-        </ListItem>
-      </List> */}
 
       <Divider />
     </Fragment>
