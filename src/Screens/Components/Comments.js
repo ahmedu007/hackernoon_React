@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 const Comments = props => {
   const date = new Date(props.time * 1000);
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
   return (
     <Fragment>
       <Card className={classes.card}>
@@ -38,11 +37,6 @@ const Comments = props => {
             >
               {date.toDateString()}
             </Typography>
-            <Typography>
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
           </CardContent>
         )}
       </Card>
@@ -56,6 +50,16 @@ const styles = theme => ({
   divider: {
     marginLeft: "50px",
     marginRight: "50px",
+  },
+  card: {
+    minWidth: 275,
+  },
+  title: {
+    marginBottom: 16,
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
   },
 });
 
