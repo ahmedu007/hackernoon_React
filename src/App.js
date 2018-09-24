@@ -17,23 +17,14 @@ class App extends Component {
         <Fragment>
           <AppBar position="static">
             <Toolbar>
-              {/* <IconButton
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="Menu"
-            >
-              <MenuIcon />
-            </IconButton> */}
-              <NavLink to="/">
-                <Typography
-                  variant="title"
-                  color="inherit"
-                  // className={classes.grow}
-                >
-                  Hacker News
-                </Typography>
-              </NavLink>
-              {/* <Button color="inherit">Login</Button> */}
+              <Typography
+                variant="title"
+                color="secondary"
+                align="center"
+                // className={classes.grow}
+              >
+                <NavLink to="/">Hacker News</NavLink>
+              </Typography>
             </Toolbar>
           </AppBar>
           <AnimatedSwitch
