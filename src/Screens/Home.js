@@ -25,6 +25,7 @@ export default class Home extends Component {
     fetch(`${BASE_URL}/topstories.json`)
       .then(res => res.json())
       .then(stories => {
+        // Could check the legnth of the array instead of a new var, since it triggers re-render
         const sliceStories =
           this.state.storiesCount === 10 ? 0 : this.state.storiesCount;
         const top10 = stories.slice(sliceStories, sliceStories + 10);
@@ -46,7 +47,14 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          paddingBottom: "10%",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "2%",
+        }}
+      >
         <div>
           {this.state.stories.map((story, index) => (
             <StoryBox
@@ -67,6 +75,7 @@ export default class Home extends Component {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                marginTop: "2%",
               }}
             >
               <BounceLoader
@@ -77,14 +86,21 @@ export default class Home extends Component {
               />
             </div>
           ) : (
-            <Button
-              variant="outlined"
-              color="primary"
-              // className={classes.button}
-              onClick={() => this.fetchStories()}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "2%",
+              }}
             >
-              More Stories ...
-            </Button>
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => this.fetchStories()}
+              >
+                More Stories ...
+              </Button>
+            </div>
           )}
         </div>
       </div>
