@@ -12,6 +12,8 @@ import Story from "./Screens/Story";
 
 class App extends Component {
   render() {
+    const titleLink = props => <NavLink to="/" {...props} />;
+
     return (
       <Router>
         <Fragment>
@@ -19,11 +21,13 @@ class App extends Component {
             <Toolbar>
               <Typography
                 variant="title"
-                color="secondary"
                 align="center"
-                // className={classes.grow}
+                component={titleLink}
+                style={{
+                  color: "white",
+                }}
               >
-                <NavLink to="/">Hacker News</NavLink>
+                Hacker News
               </Typography>
             </Toolbar>
           </AppBar>
