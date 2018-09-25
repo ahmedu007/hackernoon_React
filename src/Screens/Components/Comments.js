@@ -11,7 +11,7 @@ const Comments = props => {
   const { classes } = props;
   return (
     <Fragment>
-      <Card className={classes.card}>
+      <Card className={classes.card} raised>
         {props.deleted ? (
           <CardContent>
             <Typography variant="headline" component="h1">
@@ -53,6 +53,8 @@ const styles = theme => ({
   },
   card: {
     minWidth: 275,
+    backgroundColor: "green",
+    paddingleft: "10%",
   },
   title: {
     marginBottom: 16,
