@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 My own take on [Hackernoon](https://news.ycombinator.com/) website.
 
-If you wanna have a peek at what's inside, here is the [Link]()
+If you wanna have a peek at what's inside, here is the [Link](https://hackernews-5c9fc.firebaseapp.com/)
 
 ```
-
+https://hackernews-5c9fc.firebaseapp.com/
 ```
 
 ## Installation Instructions
@@ -24,7 +24,7 @@ git clone https://github.com/ahmedu007/hackernoon_React
    node -v
    ```
 
-   you will need version 8.x or above to run this properly.
+   you will need version 8.x or above to run this properly. Check [this link](https://nodejs.org/en/) for more details
 
 3. Install all dependencies:
 
