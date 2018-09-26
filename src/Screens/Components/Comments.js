@@ -53,8 +53,8 @@ const styles = theme => ({
   },
   card: {
     minWidth: 275,
-    backgroundColor: "green",
-    paddingleft: "10%",
+    marginBottom: 25,
+    marginTop: 25,
   },
   title: {
     marginBottom: 16,

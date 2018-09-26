@@ -49,7 +49,7 @@ export default class Story extends Component {
             />
           </div>
         ) : (
-          <div>
+          <div style={{ paddingLeft: 100, paddingRight: 100 }}>
             {this.state.comments.map(comment => (
               <Comments
                 key={comment.id}
